@@ -1,7 +1,6 @@
 - 2024.06.15
-- 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기(Lv 3) / 63%
-
-https://school.programmers.co.kr/learn/courses/30/lessons/298519
+- 프로그래머스 / 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기(Lv 3) / 63%
+- https://school.programmers.co.kr/learn/courses/30/lessons/298519
 
 SELECT COUNT(ID) AS FISH_COUNT, MAX(LENGTH) AS MAX_LENGTH, FISH_TYPE
 FROM (SELECT *,
@@ -14,10 +13,11 @@ GROUP BY FISH_TYPE
 HAVING SUM(CHANGE_LENGTH) / FISH_COUNT >= 33
 ORDER BY FISH_TYPE ASC
 
-- 2024. 06.16
-- 연간 평가점수에 해당하는 평가 등급 및 성과금 조회하기(Lv 4) / 65%
+============================================================================
 
-https://school.programmers.co.kr/learn/courses/30/lessons/284528
+- 2024.06.16
+- 프로그래머스 / 연간 평가점수에 해당하는 평가 등급 및 성과금 조회하기(Lv 4) / 65%
+- https://school.programmers.co.kr/learn/courses/30/lessons/284528
 
 ## 필요한 부분 가져오기
 SELECT A.EMP_NO, A.EMP_NAME, B.GRADE,
@@ -42,4 +42,17 @@ FROM HR_GRADE
 GROUP BY EMP_NO) AS B
 
 ON A.EMP_NO = B.EMP_NO;
+
+============================================================================
+
+- 2024.06.17
+- 프로그래머스 / 동명 동물 수 찾기(Lv 2) / 91%
+- https://school.programmers.co.kr/learn/courses/30/lessons/59041
+
+SELECT NAME, COUNT(*) AS COUNT
+FROM ANIMAL_INS
+WHERE NAME is not null
+GROUP BY NAME
+HAVING COUNT > 1
+ORDER BY NAME ASC;
 
