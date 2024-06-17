@@ -1,5 +1,5 @@
 - 2024.06.15(토)
-- 프로그래머스 / 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기(Lv 3) / 63%
+- 프로그래머스 / 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기(Lv3) / 63%
 - https://school.programmers.co.kr/learn/courses/30/lessons/298519
 
 SELECT COUNT(ID) AS FISH_COUNT, MAX(LENGTH) AS MAX_LENGTH, FISH_TYPE
@@ -16,7 +16,7 @@ ORDER BY FISH_TYPE ASC
 ============================================================================
 
 - 2024.06.16(일)
-- 프로그래머스 / 연간 평가점수에 해당하는 평가 등급 및 성과금 조회하기(Lv 4) / 65%
+- 프로그래머스 / 연간 평가점수에 해당하는 평가 등급 및 성과금 조회하기(Lv4) / 65%
 - https://school.programmers.co.kr/learn/courses/30/lessons/284528
 
 ## 필요한 부분 가져오기
@@ -46,7 +46,7 @@ ON A.EMP_NO = B.EMP_NO;
 ============================================================================
 
 - 2024.06.17(월)
-- 프로그래머스 / 동명 동물 수 찾기(Lv 2) / 91%
+- 프로그래머스 / 동명 동물 수 찾기(Lv2) / 91%
 - https://school.programmers.co.kr/learn/courses/30/lessons/59041
 
 SELECT NAME, COUNT(*) AS COUNT
