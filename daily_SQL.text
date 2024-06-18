@@ -56,3 +56,13 @@ GROUP BY NAME
 HAVING COUNT > 1
 ORDER BY NAME ASC;
 
+============================================================================
+
+- 2024.06.18(화)
+- 프로그래머스 / 카테고리 별 상품 개수 구하기(Lv2) / 90%
+- https://school.programmers.co.kr/learn/courses/30/lessons/131529
+
+SELECT LEFT(PRODUCT_CODE,2) AS CATEGORY, COUNT(*) AS PRODUCTS
+FROM PRODUCT
+GROUP BY CATEGORY
+ORDER BY CATEGORY ASC;
