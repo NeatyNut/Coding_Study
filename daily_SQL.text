@@ -66,3 +66,13 @@ SELECT LEFT(PRODUCT_CODE,2) AS CATEGORY, COUNT(*) AS PRODUCTS
 FROM PRODUCT
 GROUP BY CATEGORY
 ORDER BY CATEGORY ASC;
+
+============================================================================
+
+- 2024.06.19(수)
+- 프로그래머스 / 한 해에 잡은 물고기 수 구하기(Lv1) / 77%
+- https://school.programmers.co.kr/learn/courses/30/lessons/131529
+
+SELECT COUNT(ID) AS FISH_COUNT
+FROM FISH_INFO
+WHERE TIME Between "2021-01-01" AND "2021-12-31";
