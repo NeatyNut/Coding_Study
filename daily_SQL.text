@@ -76,3 +76,24 @@ ORDER BY CATEGORY ASC;
 SELECT COUNT(ID) AS FISH_COUNT
 FROM FISH_INFO
 WHERE TIME Between "2021-01-01" AND "2021-12-31";
+
+============================================================================
+
+- 2024.06.20(목)
+- 프로그래머스 / 카테고리 별 도서 판매량 집계하기(Lv3) / 77%
+- https://school.programmers.co.kr/learn/courses/30/lessons/144855
+
+SELECT CATEGORY, SUM(ID_TOTAL_SALES) AS TOTAL_SALES
+FROM
+BOOK AS A
+LEFT JOIN
+# 2022 1월 ID별 SALES 합산
+(SELECT BOOK_ID, SUM(SALES) AS ID_TOTAL_SALES
+FROM BOOK_SALES
+WHERE LEFT(SALES_DATE, 7) LIKE "2022-01"
+GROUP BY BOOK_ID) AS B
+ON A.BOOK_ID = B.BOOK_ID
+
+# 2022 1월 카테고리별 SALES 합산
+GROUP BY CATEGORY
+ORDER BY CATEGORY ASC;
