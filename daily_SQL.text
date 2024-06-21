@@ -97,3 +97,13 @@ ON A.BOOK_ID = B.BOOK_ID
 # 2022 1월 카테고리별 SALES 합산
 GROUP BY CATEGORY
 ORDER BY CATEGORY ASC;
+
+============================================================================
+
+- 2024.06.21(금)
+- 프로그래머스 / 강원도에 위치한 생산공장 목록 출력하기(Lv1) / 91%
+- https://school.programmers.co.kr/learn/courses/30/lessons/131112
+
+SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
+FROM FOOD_FACTORY
+WHERE ADDRESS LIKE "강원도 %";
