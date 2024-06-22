@@ -107,3 +107,12 @@ ORDER BY CATEGORY ASC;
 SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
 FROM FOOD_FACTORY
 WHERE ADDRESS LIKE "강원도 %";
+
+============================================================================
+
+- 2024.06.22(토)
+- 프로그래머스 / 가격이 제일 비싼 식품의 정보 출력하기(Lv2) / 91%
+- https://school.programmers.co.kr/learn/courses/30/lessons/131115
+
+SELECT * FROM FOOD_PRODUCT
+WHERE PRICE = (SELECT MAX(PRICE) FROM FOOD_PRODUCT);
