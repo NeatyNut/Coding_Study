@@ -116,3 +116,20 @@ WHERE ADDRESS LIKE "강원도 %";
 
 SELECT * FROM FOOD_PRODUCT
 WHERE PRICE = (SELECT MAX(PRICE) FROM FOOD_PRODUCT);
+
+
+============================================================================
+
+- 2024.06.23(일)
+- 프로그래머스 / 루시와 엘라 찾기(Lv2) / 84%
+- https://school.programmers.co.kr/learn/courses/30/lessons/59046
+
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+WHERE NAME LIKE "Lucy" OR
+NAME LIKE "Ella" OR
+NAME LIKE "Pickle" OR
+NAME LIKE "Rogan" OR
+NAME LIKE "Sabrina" OR
+NAME LIKE "Mitty"
+
