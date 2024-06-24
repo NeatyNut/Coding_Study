@@ -133,3 +133,21 @@ NAME LIKE "Rogan" OR
 NAME LIKE "Sabrina" OR
 NAME LIKE "Mitty"
 
+============================================================================
+
+- 2024.06.24(월)
+- 프로그래머스 / 특정 세대의 대장균 찾기(Lv4) / 59%
+- https://school.programmers.co.kr/learn/courses/30/lessons/301650
+
+# 3세대
+SELECT ID
+FROM ECOLI_DATA
+WHERE PARENT_ID IN
+# 2세대
+(SELECT DISTINCT ID
+FROM ECOLI_DATA
+WHERE PARENT_ID IN
+# 1세대
+(SELECT DISTINCT ID FROM ECOLI_DATA
+WHERE PARENT_ID is NULL))
+ORDER BY ID ASC;
