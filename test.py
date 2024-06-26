@@ -1,4 +1,6 @@
 def solution(begin, target, words):
+    result = 0
+
     if not target in words:
         return 0
 
@@ -18,22 +20,20 @@ def solution(begin, target, words):
 
     # 방법 찾기    
     def find_way(begin:str, target:str, words:list, result:int):
+        print("횟수 : ", result)
         needs = compare(begin, target)
+        if needs == 0:
+            return result
+
+        if len(words) == 0:
+            return 0
 
         for word in words:
             if compare(begin, word) == 1 and compare(word, target) < needs:
-                result += 1
                 break
         
         part_begin = word
         part_words = [w for w in words if w != part_begin]
-
-        if part_begin != target:
-            return find_way(part_begin, target, part_words, result)
-        else :
-            return result
-    
+        return find_way(part_begin, target, part_words, result+1)
+        
     return find_way(begin, target, words, 0)
-
-
-solution("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"])
