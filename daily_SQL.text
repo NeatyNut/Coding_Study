@@ -164,3 +164,14 @@ WHEN OUT_DATE is null THEN "출고미정"
 ELSE "출고완료" END AS 출고여부
 FROM FOOD_ORDER
 ORDER BY ORDER_ID ASC;
+
+============================================================================
+
+- 2024.06.26(수)
+- 프로그래머스 / 대여 기록이 존재하는 자동차 리스트 구하기(Lv3) / 85%
+- https://school.programmers.co.kr/learn/courses/30/lessons/157341
+
+SELECT DISTINCT CAR_ID FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+WHERE CAR_ID IN (SELECT CAR_ID FROM CAR_RENTAL_COMPANY_CAR WHERE CAR_TYPE LIKE "세단") AND
+MONTH(START_DATE) = 10
+ORDER BY CAR_ID DESC;
