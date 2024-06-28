@@ -184,3 +184,25 @@ ORDER BY CAR_ID DESC;
 
 SELECT NAME, DATETIME FROM ANIMAL_INS
 ORDER BY ANIMAL_ID DESC;
+
+============================================================================
+
+- 2024.06.28(금)
+- 프로그래머스 / 물고기 종류 별 대어 찾기(Lv3) / 60%
+- https://school.programmers.co.kr/learn/courses/30/lessons/293261
+
+# 이름 붙인 후 추출
+SELECT C.ID, D.FISH_NAME, C.LENGTH
+FROM
+
+# 최대값을 붙인 후 필터링
+(SELECT A.ID, A.FISH_TYPE, A.LENGTH
+FROM
+FISH_INFO AS A LEFT JOIN 
+(SELECT FISH_TYPE, MAX(LENGTH) AS MAX_LENGTH FROM FISH_INFO
+GROUP BY FISH_TYPE) AS B
+ON A.FISH_TYPE = B.FISH_TYPE
+WHERE A.LENGTH = B.MAX_LENGTH) AS C LEFT JOIN
+FISH_NAME_INFO AS D
+
+ON C.FISH_TYPE = D.FISH_TYPE
