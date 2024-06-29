@@ -206,3 +206,15 @@ WHERE A.LENGTH = B.MAX_LENGTH) AS C LEFT JOIN
 FISH_NAME_INFO AS D
 
 ON C.FISH_TYPE = D.FISH_TYPE
+
+============================================================================
+
+- 2024.06.29(토)
+- 프로그래머스 / 입양 시각 구하기(Lv1) / 89%
+- https://school.programmers.co.kr/learn/courses/30/lessons/59412
+
+SELECT HOUR(DATETIME) AS HOUR, COUNT(*) AS COUNT
+FROM ANIMAL_OUTS
+WHERE HOUR(DATETIME) BETWEEN 9 AND 19
+GROUP BY HOUR
+ORDER BY HOUR ASC
