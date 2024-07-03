@@ -244,10 +244,22 @@ ORDER BY ANIMAL_ID
 ============================================================================
 
 - 2024.07.02(화)
-- 프로그래머스 / 흉부외과 또는 일반외과 의사 목록 출력하기(Lv1) / 910%
+- 프로그래머스 / 흉부외과 또는 일반외과 의사 목록 출력하기(Lv1) / 91%
 - https://school.programmers.co.kr/learn/courses/30/lessons/132203
 
 SELECT DR_NAME, DR_ID, MCDP_CD, LEFT(HIRE_YMD,10) AS HIRE_YMD FROM DOCTOR
 WHERE MCDP_CD LIKE "CS" OR
 MCDP_CD LIKE "GS"
 ORDER BY HIRE_YMD DESC, DR_NAME ASC;
+
+============================================================================
+
+- 2024.07.03(수)
+- 프로그래머스 / 경기도에 위치한 식품창고 목록 출력하기(Lv1) / 91%
+- https://school.programmers.co.kr/learn/courses/30/lessons/131114
+
+SELECT WAREHOUSE_ID, WAREHOUSE_NAME, ADDRESS,
+CASE WHEN FREEZER_YN LIKE "Y" THEN "Y"
+ELSE "N" END AS FREEZER_YN
+FROM FOOD_WAREHOUSE
+WHERE ADDRESS LIKE "경기도%";
