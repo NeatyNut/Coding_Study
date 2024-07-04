@@ -263,3 +263,15 @@ CASE WHEN FREEZER_YN LIKE "Y" THEN "Y"
 ELSE "N" END AS FREEZER_YN
 FROM FOOD_WAREHOUSE
 WHERE ADDRESS LIKE "경기도%";
+
+============================================================================
+
+- 2024.07.04(목)
+- 프로그래머스 / 고양이와 개는 몇 마리 있을까(Lv2) / 89%
+- https://school.programmers.co.kr/learn/courses/30/lessons/59040
+
+SELECT ANIMAL_TYPE, COUNT(*) AS count
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+HAVING ANIMAL_TYPE LIKE "Cat" OR ANIMAL_TYPE LIKE "Dog"
+ORDER BY ANIMAL_TYPE ASC;
