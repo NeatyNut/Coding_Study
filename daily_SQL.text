@@ -275,3 +275,13 @@ FROM ANIMAL_INS
 GROUP BY ANIMAL_TYPE
 HAVING ANIMAL_TYPE LIKE "Cat" OR ANIMAL_TYPE LIKE "Dog"
 ORDER BY ANIMAL_TYPE ASC;
+
+============================================================================
+
+- 2024.07.05(금)
+- 프로그래머스 / 조건에 맞는 아이템들의 가격의 총합 구하기(Lv2) / 89%
+- https://school.programmers.co.kr/learn/courses/30/lessons/273709
+
+SELECT SUM(PRICE) AS TOTAL_PRICE
+FROM ITEM_INFO
+WHERE RARITY LIKE 'LEGEND';
