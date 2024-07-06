@@ -285,3 +285,17 @@ ORDER BY ANIMAL_TYPE ASC;
 SELECT SUM(PRICE) AS TOTAL_PRICE
 FROM ITEM_INFO
 WHERE RARITY LIKE 'LEGEND';
+
+============================================================================
+
+- 2024.07.06(토)
+- 프로그래머스 / 보호소에서 중성화한 동물(Lv4) / 85%
+- https://school.programmers.co.kr/learn/courses/30/lessons/59045
+
+SELECT A.ANIMAL_ID, A.ANIMAL_TYPE, A.NAME
+FROM
+(SELECT ANIMAL_ID, ANIMAL_TYPE, NAME
+FROM ANIMAL_INS
+WHERE SEX_UPON_INTAKE LIKE "Intact%") AS A LEFT JOIN
+ANIMAL_OUTS AS B ON A.ANIMAL_ID = B.ANIMAL_ID
+WHERE B.SEX_UPON_OUTCOME LIKE "Spayed%" OR B.SEX_UPON_OUTCOME LIKE "Neutered%"
