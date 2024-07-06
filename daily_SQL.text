@@ -299,3 +299,15 @@ FROM ANIMAL_INS
 WHERE SEX_UPON_INTAKE LIKE "Intact%") AS A LEFT JOIN
 ANIMAL_OUTS AS B ON A.ANIMAL_ID = B.ANIMAL_ID
 WHERE B.SEX_UPON_OUTCOME LIKE "Spayed%" OR B.SEX_UPON_OUTCOME LIKE "Neutered%"
+
+============================================================================
+
+- 2024.07.07(일)
+- 프로그래머스 / 오랜 기간 보호한 동물(1)(Lv3) / 86%
+- https://school.programmers.co.kr/learn/courses/30/lessons/59044
+
+SELECT NAME, DATETIME
+FROM ANIMAL_INS
+WHERE ANIMAL_ID NOT IN (SELECT ANIMAL_ID FROM ANIMAL_OUTS)
+ORDER BY DATETIME ASC
+LIMIT 3;
