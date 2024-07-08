@@ -1,18 +1,21 @@
-def solution(s):
-    def delete_same(s):
-        for i in range(len(s)-1):
-            if s[i] == s[i+1]:
-                return s[:i] + s[i+2:] if i != len(s)-1 else s[:i]
-        
-        return s
+def solution(n):
+    str_n = str(n)
+    new_number = 0
+
+
+    for idx, i in enumerate(str_n):
+        else_list = sorted(list(str_n[idx+1:]))
+        if int("".join(else_list[::-1])) == int(str_n[idx+1:]):
+            print(idx)
+            for idx2, j in enumerate(else_list):
+                if j > i:
+                    break
+
     
-    while s != '':
-        if delete_same(s) == s:
+            new_number = else_list[idx2]
+            else_list[idx2] = i
             break
-        
-        s = delete_same(s)
 
-    return int(len(s) == 0)
+    return str_n[:idx] + new_number + "".join(else_list)
 
-
-print(solution('baabaa'))
+print(solution(364))
