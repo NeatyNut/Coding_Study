@@ -324,3 +324,15 @@ ELSE "단기 대여" END AS RENT_TYPE
 FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
 WHERE START_DATE LIKE "2022-09%"
 ORDER BY HISTORY_ID DESC;
+
+============================================================================
+
+- 2024.07.09(화)
+- 프로그래머스 / 대장균들의 자식의 수 구하기(Lv3) / 66%
+- https://school.programmers.co.kr/learn/courses/30/lessons/299305
+
+SELECT A.ID, COALESCE(B.CHILD_COUNT, 0) AS CHILD_COUNT FROM
+(SELECT ID FROM ECOLI_DATA) AS A LEFT JOIN
+(SELECT PARENT_ID AS ID, COUNT(*) AS CHILD_COUNT FROM ECOLI_DATA
+GROUP BY PARENT_ID) AS B
+ON A.ID = B.ID
