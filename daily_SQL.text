@@ -336,3 +336,15 @@ SELECT A.ID, COALESCE(B.CHILD_COUNT, 0) AS CHILD_COUNT FROM
 (SELECT PARENT_ID AS ID, COUNT(*) AS CHILD_COUNT FROM ECOLI_DATA
 GROUP BY PARENT_ID) AS B
 ON A.ID = B.ID
+
+============================================================================
+
+- 2024.07.10(수)
+- 프로그래머스 / 대장균의 크기에 따라 분류하기 1(Lv3) / 76%
+- https://school.programmers.co.kr/learn/courses/30/lessons/299307
+
+SELECT ID,
+CASE WHEN SIZE_OF_COLONY <= 100 THEN "LOW"
+WHEN SIZE_OF_COLONY <= 1000 THEN "MEDIUM"
+ELSE "HIGH" END AS SIZE
+FROM ECOLI_DATA
