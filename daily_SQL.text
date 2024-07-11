@@ -348,3 +348,14 @@ CASE WHEN SIZE_OF_COLONY <= 100 THEN "LOW"
 WHEN SIZE_OF_COLONY <= 1000 THEN "MEDIUM"
 ELSE "HIGH" END AS SIZE
 FROM ECOLI_DATA
+
+============================================================================
+
+- 2024.07.11(목)
+- 프로그래머스 / 진료과별 총 예약 횟수 출력하기(Lv2) / 89%
+- https://school.programmers.co.kr/learn/courses/30/lessons/132202
+
+SELECT MCDP_CD AS "진료과코드", COUNT(*) AS "5월예약건수" FROM APPOINTMENT
+WHERE APNT_YMD LIKE "2022-05%"
+GROUP BY MCDP_CD
+ORDER BY COUNT(*) ASC, MCDP_CD ASC;
