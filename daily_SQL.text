@@ -359,3 +359,14 @@ SELECT MCDP_CD AS "진료과코드", COUNT(*) AS "5월예약건수" FROM APPOINT
 WHERE APNT_YMD LIKE "2022-05%"
 GROUP BY MCDP_CD
 ORDER BY COUNT(*) ASC, MCDP_CD ASC;
+
+============================================================================
+
+- 2024.07.12(금)
+- 프로그래머스 / FrontEnd개발자 찾기(Lv4) / 45%
+- https://school.programmers.co.kr/learn/courses/30/lessons/276035
+
+SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
+FROM DEVELOPERS
+WHERE SKILL_CODE & (SELECT SUM(CODE) FROM SKILLCODES WHERE CATEGORY LIKE 'Front End' GROUP BY CATEGORY)
+ORDER BY ID;
