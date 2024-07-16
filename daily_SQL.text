@@ -398,3 +398,9 @@ GROUP BY EMP_NO
 ORDER BY SCORE DESC
 LIMIT 1) AS A LEFT JOIN HR_EMPLOYEES AS B
 ON A.EMP_NO = B.EMP_NO;
+
+============================================================================
+
+- 2024.07.16(화)
+- 프로그래머스 / (Lv) / %
+- 
