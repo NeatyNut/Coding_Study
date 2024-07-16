@@ -402,5 +402,7 @@ ON A.EMP_NO = B.EMP_NO;
 ============================================================================
 
 - 2024.07.16(화)
-- 프로그래머스 / (Lv) / %
-- 
+- 프로그래머스 / 가장 비싼 상품 구하기(Lv1) / 91%
+- https://school.programmers.co.kr/learn/courses/30/lessons/131697
+
+SELECT MAX(PRICE) AS MAX_PRICE FROM PRODUCT
