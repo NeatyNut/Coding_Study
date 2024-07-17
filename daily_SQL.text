@@ -406,3 +406,14 @@ ON A.EMP_NO = B.EMP_NO;
 - https://school.programmers.co.kr/learn/courses/30/lessons/131697
 
 SELECT MAX(PRICE) AS MAX_PRICE FROM PRODUCT
+
+============================================================================
+
+- 2024.07.17(수)
+- 프로그래머스 / 노선별 평균 역 사이 거리 조회하기(Lv2) / 62%
+- https://school.programmers.co.kr/learn/courses/30/lessons/284531
+
+SELECT ROUTE, CONCAT(ROUND(SUM(D_BETWEEN_DIST),1),'km') AS TOTAL_DISTANCE, CONCAT(ROUND(AVG(D_BETWEEN_DIST),2),'km') AS AVERAGE_DISTANCE
+FROM SUBWAY_DISTANCE
+GROUP BY ROUTE
+ORDER BY SUM(D_BETWEEN_DIST) DESC;
