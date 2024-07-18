@@ -417,3 +417,12 @@ SELECT ROUTE, CONCAT(ROUND(SUM(D_BETWEEN_DIST),1),'km') AS TOTAL_DISTANCE, CONCA
 FROM SUBWAY_DISTANCE
 GROUP BY ROUTE
 ORDER BY SUM(D_BETWEEN_DIST) DESC;
+
+============================================================================
+
+- 2024.07.18(목)
+- 프로그래머스 / 특정 물고기를 잡은 총 수 구하기(Lv2) / 74%
+- https://school.programmers.co.kr/learn/courses/30/lessons/298518
+
+SELECT COUNT(*) AS FISH_COUNT FROM FISH_INFO
+WHERE FISH_TYPE IN (SELECT FISH_TYPE FROM FISH_NAME_INFO WHERE FISH_NAME LIKE "BASS" OR FISH_NAME LIKE "SNAPPER")
