@@ -426,3 +426,14 @@ ORDER BY SUM(D_BETWEEN_DIST) DESC;
 
 SELECT COUNT(*) AS FISH_COUNT FROM FISH_INFO
 WHERE FISH_TYPE IN (SELECT FISH_TYPE FROM FISH_NAME_INFO WHERE FISH_NAME LIKE "BASS" OR FISH_NAME LIKE "SNAPPER")
+
+============================================================================
+
+- 2024.07.19(금)
+- 프로그래머스 / 인기있는 아이스크림(Lv1) / 89%
+- https://school.programmers.co.kr/learn/courses/30/lessons/133024
+
+SELECT FLAVOR FROM FIRST_HALF
+ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID ASC;
+
+
