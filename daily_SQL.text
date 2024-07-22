@@ -443,3 +443,15 @@ ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID ASC;
 - https://school.programmers.co.kr/learn/courses/30/lessons/59039
 
 SELECT ANIMAL_ID FROM ANIMAL_INS WHERE NAME IS NULL ORDER BY ANIMAL_ID ASC;
+
+============================================================================
+
+- 2024.07.22(월)
+- 프로그래머스 / 조건에 맞는 도서와 저자 리스트 출력하기(Lv2) / 87%
+- https://school.programmers.co.kr/learn/courses/30/lessons/144854
+
+SELECT A.BOOK_ID, B.AUTHOR_NAME, LEFT(A.PUBLISHED_DATE,10) AS PUBLISHED_DATE
+FROM BOOK AS A LEFT JOIN AUTHOR AS B
+ON A.AUTHOR_ID = B.AUTHOR_ID
+WHERE CATEGORY LIKE "경제"
+ORDER BY PUBLISHED_DATE ASC;
