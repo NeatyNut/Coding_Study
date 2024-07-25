@@ -471,3 +471,13 @@ HAVING TOTAL_SALES >= 700000) AS A LEFT JOIN
 USED_GOODS_USER AS B
 ON A.WRITER_ID = B.USER_ID
 ORDER BY A.TOTAL_SALES ASC;
+
+============================================================================
+
+- 2024.07.26(금)
+- 프로그래머스 / 3월에 태어난 여성 회원 목록 출력하기(Lv2) / 83%
+- https://school.programmers.co.kr/learn/courses/30/lessons/131120
+
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, LEFT(DATE_OF_BIRTH,10) AS DATE_OF_BIRTH FROM MEMBER_PROFILE
+WHERE MONTH(DATE_OF_BIRTH) = 3 AND TLNO IS NOT NULL AND GENDER LIKE "W"
+ORDER BY MEMBER_ID;
