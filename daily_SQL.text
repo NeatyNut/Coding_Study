@@ -481,3 +481,14 @@ ORDER BY A.TOTAL_SALES ASC;
 SELECT MEMBER_ID, MEMBER_NAME, GENDER, LEFT(DATE_OF_BIRTH,10) AS DATE_OF_BIRTH FROM MEMBER_PROFILE
 WHERE MONTH(DATE_OF_BIRTH) = 3 AND TLNO IS NOT NULL AND GENDER LIKE "W"
 ORDER BY MEMBER_ID;
+
+============================================================================
+
+- 2024.07.28(일)
+- 프로그래머스 / 12세 이하인 여자 환자 목록 출력하기(Lv1) / 89%
+- https://school.programmers.co.kr/learn/courses/30/lessons/132201
+
+SELECT PT_NAME, PT_NO, GEND_CD, AGE,
+CASE WHEN TLNO is null THEN 'NONE'
+ELSE TLNO END AS TLNO
+FROM PATIENT WHERE AGE <= 12 AND GEND_CD LIKE "W" ORDER BY AGE DESC, PT_NAME ASC
