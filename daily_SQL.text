@@ -492,3 +492,13 @@ SELECT PT_NAME, PT_NO, GEND_CD, AGE,
 CASE WHEN TLNO is null THEN 'NONE'
 ELSE TLNO END AS TLNO
 FROM PATIENT WHERE AGE <= 12 AND GEND_CD LIKE "W" ORDER BY AGE DESC, PT_NAME ASC
+
+============================================================================
+
+- 2024.07.30(화)
+- 프로그래머스 / 가장 큰 물고기 10마리 구하기(Lv1) / 66%
+- https://school.programmers.co.kr/learn/courses/30/lessons/298517
+
+SELECT ID, LENGTH FROM FISH_INFO
+ORDER BY LENGTH DESC, ID ASC
+LIMIT 10
