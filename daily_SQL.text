@@ -502,3 +502,13 @@ FROM PATIENT WHERE AGE <= 12 AND GEND_CD LIKE "W" ORDER BY AGE DESC, PT_NAME ASC
 SELECT ID, LENGTH FROM FISH_INFO
 ORDER BY LENGTH DESC, ID ASC
 LIMIT 10
+
+============================================================================
+
+- 2024.08.01(목)
+- 프로그래머스 / 월별 잡은 물고기 수 구하기(Lv2) / 78%
+- https://school.programmers.co.kr/learn/courses/30/lessons/293260
+
+SELECT COUNT(*) AS FISH_COUNT, MONTH(TIME) AS MONTH FROM FISH_INFO
+GROUP BY MONTH(TIME)
+ORDER BY MONTH(TIME) ASC;
