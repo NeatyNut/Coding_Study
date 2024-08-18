@@ -533,3 +533,11 @@ SELECT FLAVOR FROM FIRST_HALF
 WHERE FLAVOR IN (SELECT FLAVOR FROM ICECREAM_INFO WHERE INGREDIENT_TYPE LIKE "fruit_based")
 AND TOTAL_ORDER > 3000
 ORDER BY TOTAL_ORDER DESC;
+
+============================================================================
+
+- 2024.08.18(일)
+- 프로그래머스 / 잡은 물고기 중 가장 큰 물고기의 길이 구하기(Lv1) / 80%
+- https://school.programmers.co.kr/learn/courses/30/lessons/298515
+
+SELECT CONCAT(FORMAT(MAX(LENGTH), 2), "cm") AS MAX_LENGTH FROM FISH_INFO
