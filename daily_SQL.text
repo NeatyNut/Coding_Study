@@ -541,3 +541,12 @@ ORDER BY TOTAL_ORDER DESC;
 - https://school.programmers.co.kr/learn/courses/30/lessons/298515
 
 SELECT CONCAT(FORMAT(MAX(LENGTH), 2), "cm") AS MAX_LENGTH FROM FISH_INFO
+
+============================================================================
+
+- 2024.08.31(토)
+- 프로그래머스 / 모든 레코드 조회하기(Lv1) / 82%
+- https://school.programmers.co.kr/learn/courses/30/lessons/59034
+
+SELECT * FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
