@@ -550,3 +550,17 @@ SELECT CONCAT(FORMAT(MAX(LENGTH), 2), "cm") AS MAX_LENGTH FROM FISH_INFO
 
 SELECT * FROM ANIMAL_INS
 ORDER BY ANIMAL_ID;
+
+============================================================================
+
+- 2024.09.01(일)
+- 프로그래머스 / 물고기 종류 별 잡은 수 구하기(Lv2) / 81%
+- https://school.programmers.co.kr/learn/courses/30/lessons/293257
+
+
+SELECT COUNT(*) AS FISH_COUNT, FISH_NAME FROM
+(SELECT A.FISH_TYPE, B.FISH_NAME FROM
+FISH_INFO AS A LEFT JOIN FISH_NAME_INFO AS B
+ON A.FISH_TYPE = B.FISH_TYPE) AS C
+GROUP BY FISH_NAME
+ORDER BY COUNT(*) DESC;
